@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using JsonDataEditor.dataBase;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace JsonDataEditor {
 
         
         static SkillDatas skills;
-        static List<SkillData> skillData;
+        static List<SkillInfo> skillData;
         object[] obj;
         ItemTextBox[] itemtext;
         string fileName;
@@ -30,10 +31,10 @@ namespace JsonDataEditor {
 
         private void Initialize() {
             if (skills == null)
-                skills = new SkillDatas(new List<SkillData>());
+                skills = new SkillDatas(new List<SkillInfo>());
             skillData = skills.skillDatas;
             if(skillData.Count == 0)
-                skillData.Add(new SkillData());
+                skillData.Add(new SkillInfo());
             skillDataView.Visible = dataviewshow;
             Dataviewbtn.Enabled = true;
             Save.Visible = true;
@@ -93,9 +94,10 @@ namespace JsonDataEditor {
 
                 for (int i = 0; i < skillDataView.ColumnCount; i++) {
                     if (skillDataView.Rows[SelectOpition.SelectedIndex].Cells[i].Value != null)
+                    {
                         itemtext[i].Text = skillDataView.Rows[SelectOpition.SelectedIndex].Cells[i].Value.ToString();
-                    Console.WriteLine();
-
+                        Console.WriteLine(itemtext[i].Text = skillDataView.Rows[SelectOpition.SelectedIndex].Cells[i].Value.ToString());
+                    }
 
                 }
             }
@@ -182,7 +184,7 @@ namespace JsonDataEditor {
 
         private void AddData_Click(object sender, EventArgs e) {
 
-            skillData.Add(new SkillData(skillData[skillData.Count - 1].SkillID + 1));
+            skillData.Add(new SkillInfo(skillData[skillData.Count - 1].SkillID + 1));
             skillDataView.DataSource = null;
             skillDataView.DataSource = skillData;
 

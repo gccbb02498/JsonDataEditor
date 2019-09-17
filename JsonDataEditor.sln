@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataEditor", "JsonDataEditor\JsonDataEditor.csproj", "{9EE5A5C0-11CC-496F-8A1C-8046B9158142}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataEditor", "src\JsonDataEditor\JsonDataEditor.csproj", "{9EE5A5C0-11CC-496F-8A1C-8046B9158142}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

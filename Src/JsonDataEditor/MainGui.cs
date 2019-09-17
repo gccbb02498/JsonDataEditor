@@ -12,6 +12,9 @@ namespace JsonDataEditor {
     public partial class MainGui : Form {
 
         public MainGui() {
+
+
+#if DEBUG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Error:\t");
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -26,6 +29,7 @@ namespace JsonDataEditor {
             Console.Write("Normal:\t");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("this is a normal log");
+#endif
             InitializeComponent();
            
         }

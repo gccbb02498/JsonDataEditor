@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9EE5A5C0-11CC-496F-8A1C-8046B9158142}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>JsonDataEditor</RootNamespace>
     <AssemblyName>JsonDataEditor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,14 +32,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -59,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cmd\Cmd.cs" />
+    <Compile Include="dataBase\BaseData.cs" />
+    <Compile Include="dataBase\basetype.cs" />
     <Compile Include="Debug\Debug.cs" />
     <Compile Include="ItemText.cs">
       <SubType>Component</SubType>
@@ -69,6 +73,7 @@
     <Compile Include="MainGui.Designer.cs">
       <DependentUpon>MainGui.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager\BaseDataManager.cs" />
     <Compile Include="MobDataEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,7 +97,7 @@
     <Compile Include="SkillDataEditor.Designer.cs">
       <DependentUpon>SkillDataEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="SkillDatas.cs" />
+    <Compile Include="dataBase\SkillDatas.cs" />
     <EmbeddedResource Include="Genesis.resx">
       <DependentUpon>Genesis.cs</DependentUpon>
     </EmbeddedResource>
