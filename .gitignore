@@ -1,0 +1,7 @@
+/.vs
+/Src/JsonDataEditor/bin
+/packages/Newtonsoft.Json.12.0.2
+/Src/JsonDataEditor/obj/Debug
+/Src/JsonDataEditor/obj/Release
+/Src/JsonDataEditor/packages/Newtonsoft.Json.12.0.2
+/Src/JsonDataEditor/Test
