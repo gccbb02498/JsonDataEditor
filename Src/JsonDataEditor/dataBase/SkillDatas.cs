@@ -56,7 +56,7 @@ namespace JsonDataEditor.dataBase
 
         public SkillInfo()
         {
-            basetype = Basetype.SkillInfo;
+            //basetype = Basetype.SkillInfo;
         }
 
         public SkillInfo(int SkillId)
