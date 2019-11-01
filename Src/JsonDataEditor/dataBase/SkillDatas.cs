@@ -13,11 +13,10 @@ namespace JsonDataEditor.dataBase
             this.skillDatas = list;
         }
     }
-    
+
     [Serializable]
     public class SkillInfo : BaseData
     {
-       
         private int skillID;
         private string skillName;
         private string icon_name;

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-class Cmd {
-    public Cmd() {
 
+internal class Cmd
+{
+    public Cmd()
+    {
         Process p = new Process();
         String str = null;
         p.StartInfo.FileName = "cmd.exe";
@@ -22,10 +24,10 @@ class Cmd {
         p.Close();
 
         Console.WriteLine(str);
-
     }
-    public static void WriteLine(string format, params object[] args) {
+
+    public static void WriteLine(string format, params object[] args)
+    {
         WriteLine(string.Format(format, args));
     }
-
 }

@@ -1,13 +1,15 @@
 ﻿using JsonDataEditor.dataBase;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 
 namespace JsonDataEditor.Manager
 {
     public class BaseDataManager
     {
-        public static BaseDataManager Instance;
+        public static BaseDataManager Instance=new BaseDataManager();
         private Dictionary<Basetype, BaseData> Basedic;
 
         public BaseDataManager()
@@ -15,12 +17,14 @@ namespace JsonDataEditor.Manager
             if (Instance == null)
                 Instance = this;
             Basedic = new Dictionary<Basetype, BaseData>();
+            
             InitBaseData();
-            GetBase();
+            LoadData();
         }
 
         private void InitBaseData()
         {
+            Console.WriteLine("初始化資料庫");
             foreach (Basetype i in Enum.GetValues(typeof(Basetype)))
             {
                 //Console.WriteLine(i.ToString());
@@ -32,6 +36,8 @@ namespace JsonDataEditor.Manager
                 {
                     object obj = Activator.CreateInstance(type);
                     this.Basedic.Add(i, obj as BaseData);
+                    
+                    Console.WriteLine(obj.GetType());
                 }
                 //{
                 Console.WriteLine(i.ToString());
@@ -43,21 +49,26 @@ namespace JsonDataEditor.Manager
             }
         }
 
-        public void GetBase()
+        public void GetBase(Basetype basetype)
         {
-            foreach (Basetype i in Enum.GetValues(typeof(Basetype)))
-            {
-                this.Basedic.TryGetValue(i, out BaseData baseData);
-                if (baseData != null)
-                    Console.WriteLine(baseData.ToString());
-            }
+            BaseData a;
+            Basedic.TryGetValue(basetype, out a);
+            PropertyInfo[] inf = a.GetType().GetProperties();
+            foreach(PropertyInfo propertyInfo in inf)
+                Console.WriteLine("{0}={1}", propertyInfo.Name, propertyInfo.GetValue(a, null));
         }
 
         public void LoadData()
         {
-            foreach(var i in Basedic)
+            Console.WriteLine("Load Data");
+            foreach (var i in Basedic)
             {
-                //base
+                string path =  Path.Combine(@"C:\andrew.chi\JsonDataEditor\JsonDb", i.Key.ToString());
+                string json = File.ReadAllText(path+".json");
+                //T
+                object skills = JsonConvert.DeserializeObject(json);
+                
+                Console.WriteLine(skills.ToString());
             }
         }
     }

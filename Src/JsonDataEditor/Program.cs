@@ -19,15 +19,14 @@ namespace JsonDataEditor
         [STAThread]
         private static void Main(string[] args)
         {
-
-            new BaseDataManager();
+            BaseDataManager manager=BaseDataManager.Instance;
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 #if DEBUG
             AllocConsole();
 #endif
 
             //Cmd cmd = new Cmd();
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainGui());
             Debug.log(2);
 #if DEBUG

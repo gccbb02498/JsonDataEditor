@@ -6,7 +6,6 @@ namespace Test
     {
         private static void Main()
         {
-
             Console.WriteLine(StringEnumExtension.GetDescription<TestEnum>(TestEnum.Unknow));
             Console.ReadKey();
         }

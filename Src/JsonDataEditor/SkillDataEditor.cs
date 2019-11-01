@@ -194,5 +194,14 @@ namespace JsonDataEditor
 
             refreshList();
         }
+
+        private void SkillDataEditor_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void SkillDataEditor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }
