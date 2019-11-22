@@ -19,7 +19,7 @@ namespace JsonDataEditor
         [STAThread]
         private static void Main(string[] args)
         {
-            BaseDataManager manager=BaseDataManager.Instance;
+            BaseDataManager manager = BaseDataManager.Instance;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 #if DEBUG

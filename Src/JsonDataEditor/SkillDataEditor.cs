@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-
+using JsonDataEditor.Manager;
 namespace JsonDataEditor
 {
     public partial class SkillDataEditor : Form
@@ -22,6 +22,7 @@ namespace JsonDataEditor
         public SkillDataEditor()
         {
             InitializeComponent();
+            BaseDataManager.Instance.GetBase(Basetype.SkillInfo);
         }
 
         private void Initialize()
@@ -188,7 +189,7 @@ namespace JsonDataEditor
 
         private void AddData_Click(object sender, EventArgs e)
         {
-            skillData.Add(new SkillInfo(skillData[skillData.Count - 1].SkillID + 1));
+            //skillData.Add(new SkillInfo(skillData[skillData.Count - 1].SkillID + 1));
             skillDataView.DataSource = null;
             skillDataView.DataSource = skillData;
 
