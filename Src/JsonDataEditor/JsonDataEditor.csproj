@@ -62,7 +62,7 @@
   <ItemGroup>
     <Compile Include="Cmd\Cmd.cs" />
     <Compile Include="dataBase\BaseData.cs" />
-    <Compile Include="dataBase\basetype.cs" />
+    <Compile Include="dataBase\Basetype.cs" />
     <Compile Include="Debug\Debug.cs" />
     <Compile Include="ItemText.cs">
       <SubType>Component</SubType>

@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 
-public class ItemDataEditor  {
+public class ItemDataEditor
+{
     public MyData myData;
     public List<MyDataItem> items;
     private bool isPrettyPrint = false;
-    string filePath = "";
-    string dataJson;
+    private string filePath = "";
+    private string dataJson;
     private int index;
-    string[] options;
+    private string[] options;
 
     //[MenuItem("Window/Item Data Editor")]
     //static void Init() {
@@ -53,26 +53,21 @@ public class ItemDataEditor  {
     //        EditorGUILayout.PropertyField(serializedProperty, true);
     //        serializedObject.ApplyModifiedProperties();
 
-
     //    }
     //    else {
-
     //    }
     //    GUILayout.EndVertical();
 
-        //#endregion
-    }
+    //#endregion
+}
 
 //    private void SaveJsonData() {
 //        filePath = EditorUtility.SaveFilePanel("Save json data file", Application.streamingAssetsPath, "", "json");
 //        if (!string.IsNullOrEmpty(filePath)) {
-
 //            string dataJson = JsonConvert.SerializeObject(myData);
 //            File.WriteAllText(filePath, dataJson);
 //        }
 //    }
-
-
 
 //    private void CreateNewData() {
 //        filePath = "";

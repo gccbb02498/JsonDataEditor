@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace JsonDataEditor {
+namespace JsonDataEditor
+{
     [Serializable]
-    class MobData {
+    internal class MobData
+    {
         private int id;
         private String name;
         private int lv;
@@ -27,7 +25,8 @@ namespace JsonDataEditor {
         public int Hit { get => hit; set => hit = value; }
         public int Flee { get => flee; set => flee = value; }
 
-        public MobData(int id, string name, int lv, int hp, int mp, int exp, int atk, int hit, int flee) {
+        public MobData(int id, string name, int lv, int hp, int mp, int exp, int atk, int hit, int flee)
+        {
             this.id = id;
             this.name = name;
             this.lv = lv;

@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JsonDataEditor {
-    public partial class MainGui : Form {
-
-        public MainGui() {
-
-
+namespace JsonDataEditor
+{
+    public partial class MainGui : Form
+    {
+        public MainGui()
+        {
 #if DEBUG
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Error:\t");
@@ -31,28 +24,27 @@ namespace JsonDataEditor {
             Console.WriteLine("this is a normal log");
 #endif
             InitializeComponent();
-           
         }
-        
-        private void SkillDataBtn_Click(object sender, EventArgs e) {
+
+        private void SkillDataBtn_Click(object sender, EventArgs e)
+        {
             SkillDataEditor SkillDataEditor = new SkillDataEditor();
             this.Hide();
             SkillDataEditor.Show();
         }
 
-        private void ItemDataBtn_Click(object sender, EventArgs e) {
+        private void ItemDataBtn_Click(object sender, EventArgs e)
+        {
             ItemDataEditor itemDataEditor = new ItemDataEditor();
             this.Hide();
             itemDataEditor.Show();
         }
 
-        private void MobDataBtn_Click(object sender, EventArgs e) {
-
+        private void MobDataBtn_Click(object sender, EventArgs e)
+        {
             MobDataEditor mobDataEditor = new MobDataEditor();
             this.Hide();
             mobDataEditor.Show();
         }
-
-       
     }
 }

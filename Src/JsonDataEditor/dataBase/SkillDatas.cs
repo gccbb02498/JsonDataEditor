@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace JsonDataEditor.dataBase
 {
     [Serializable]
-    public class SkillDatas
+    public class SkillDatas :BaseData
     {
         public List<SkillInfo> skillDatas;
 
@@ -13,11 +13,10 @@ namespace JsonDataEditor.dataBase
             this.skillDatas = list;
         }
     }
-    
+
     [Serializable]
     public class SkillInfo : BaseData
     {
-       
         private int skillID;
         private string skillName;
         private string icon_name;
@@ -50,22 +49,27 @@ namespace JsonDataEditor.dataBase
         public string EffectName { get => effectName; set => effectName = value; }
         public string AniName { get => aniName; set => aniName = value; }
         public float AniTime { get => aniTime; set => aniTime = value; }
-        internal ApplyType ApplyType { get => applyType; set => applyType = value; }
-        internal ApplyProperty AplyProperty { get => aplyProperty; set => aplyProperty = value; }
-        internal ReleaseType ReleaseType { get => releaseType; set => releaseType = value; }
+        public ApplyType ApplyType { get => applyType; set => applyType = value; }
+        public ApplyProperty AplyProperty { get => aplyProperty; set => aplyProperty = value; }
+        public ReleaseType ReleaseType { get => releaseType; set => releaseType = value; }
 
         public SkillInfo()
         {
-            basetype = Basetype.SkillInfo;
+            //basetype = Basetype.SkillInfo;
         }
 
         public SkillInfo(int SkillId)
         {
             this.SkillID = SkillId;
         }
+
+        public int GetId()
+        {
+            return skillID;
+        }
     }
 
-    internal enum ApplyProperty
+    public enum ApplyProperty
     {
         Attack,
         Defense,
@@ -74,14 +78,14 @@ namespace JsonDataEditor.dataBase
         Mp
     }
 
-    internal enum ReleaseType
+    public enum ReleaseType
     {
         Self,
         Enemy,
         Position
     }
 
-    internal enum ApplyType
+    public enum ApplyType
     {
         Swordman,
         Magician
